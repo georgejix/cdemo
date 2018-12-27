@@ -4,23 +4,53 @@
 #include "nvGui2.h"
 #include "fuShu.h"
 #include "myString.h"
+#include "animal.h"
 
 using namespace std;
 void testNvGui1();
 void testNvGui2();
 void testFuShu();
 void testMyString();
+void testAnimal();
 
 int main(){
 	//testNvGui1();
 	//testNvGui2();
 	//testFuShu();
-	testMyString();
+	//testMyString();
+	testAnimal();
 	return 0;
 }
 
+void testAnimal(){
+	Bird *bird1 = new Bird("pigeon", 12);
+	bird1->setWeight(5);
+	bird1->show();
+	cout<<"weight="<<bird1->getWeight()<<endl;
+}
+
 void testMyString(){
-	MyString mString;
+	MyString s1 = "string";
+	//MyString *mString = new MyString("string");
+	cout<<s1<<" size="<<s1.size()<<endl;
+	s1[2] = 'm';
+	cout<<s1<<endl;
+
+	MyString s2 = "abcdefg";
+	MyString s3;
+	s3 = s1 + s2;
+	cout<<s3<<endl;
+
+	cout<<s1(1)<<endl;
+	if(s1 == s2){
+		cout<<"相等"<<endl;
+	}else{
+		cout<<"不相等"<<endl;
+	}
+	cout<<s2.find('p')<<endl;
+	MyString s4;
+	cout<<s4.isEmpty()<<endl;
+
 }
 void testFuShu(){
 	FuShu *f1 = new FuShu(1, 2);
@@ -42,6 +72,7 @@ void testFuShu(){
 	f2->show();
 	++(*f2);
 	f2->show();
+	+(*f1);
 }
 
 void testNvGui2(){

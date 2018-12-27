@@ -17,3 +17,4 @@ class FuShu{
 		FuShu& operator++(int k);
 };
 FuShu operator+(FuShu &f1, FuShu &f2);
+void operator+(FuShu &f1);

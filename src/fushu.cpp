@@ -46,3 +46,5 @@ FuShu& FuShu::operator++(int k){
 	this->image +=1;
 	return *this;
 };
+void operator+(FuShu &f1){
+};

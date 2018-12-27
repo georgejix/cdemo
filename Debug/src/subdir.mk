@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/animal.cpp \
 ../src/fushu.cpp \
 ../src/main.cpp \
 ../src/myString.cpp \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../src/test.c 
 
 OBJS += \
+./src/animal.o \
 ./src/fushu.o \
 ./src/main.o \
 ./src/myString.o \
@@ -22,6 +24,7 @@ OBJS += \
 ./src/test.o 
 
 CPP_DEPS += \
+./src/animal.d \
 ./src/fushu.d \
 ./src/main.d \
 ./src/myString.d \
