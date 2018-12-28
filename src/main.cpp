@@ -23,10 +23,31 @@ int main(){
 }
 
 void testAnimal(){
-	Bird *bird1 = new Bird("pigeon", 12);
-	bird1->setWeight(5);
-	bird1->show();
-	cout<<"weight="<<bird1->getWeight()<<endl;
+	Bird *bird = new Bird("pigeon", 12, 5);
+	bird->show();
+	cout<<"weight="<<bird->getWeight()<<endl;
+
+	Animal animal;
+	Fish fish;
+	People::like(fish);
+	People::like(*bird);
+	People::like(animal);
+
+	cout<<"-----"<<endl;
+	Animal *animal_ = NULL;
+	animal_ = &animal;
+	animal_->getTag();
+	animal_ = bird;
+	animal_->getTag();
+	animal_ = &fish;
+	animal_->getTag();
+
+	Bird *b = NULL;
+	b = (Bird*) &animal;
+	//去掉父类中方法前virtual，会直接执行子类方法
+	b->getTag();
+
+	delete bird;
 }
 
 void testMyString(){
