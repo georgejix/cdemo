@@ -29,8 +29,19 @@ int main(){
 }
 
 void testFstream(){
-	ofstream fout("E://work_jx/wenjian/20190102/1.txt");
-	fout << "testfstream" << endl;
+	string filepath = "E://work_jx/wenjian/20190102/1.txt";
+	ofstream fout(filepath.c_str());
+	fout << "testfstreams" << endl;
+	fout.close();
+
+	ifstream fin(filepath.c_str());
+	string s;
+	fin>>s;
+	cout.width(50);
+	cout.fill('*');
+	cout<<left;
+	cout<<s<<endl;
+	fin.close();
 }
 
 void testExtend(){
