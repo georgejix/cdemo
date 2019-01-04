@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
+
+#ifndef NVGUI1_H
+#define NVGUI1_H
 
 class NvGui{
 private:
@@ -26,3 +28,5 @@ void printNvGui(NvGui *nv);
 void setParams(NvGui &nv, string name, int age, string address);
 void printNvGui(NvGui &nv);
 void getObject(NvGui *p);
+
+#endif

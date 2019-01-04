@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+#ifndef FUSHU_H
+#define FUSHU_H
+
 class FuShu{
 	private:
 		int real;
@@ -18,3 +21,5 @@ class FuShu{
 };
 FuShu operator+(FuShu &f1, FuShu &f2);
 void operator+(FuShu &f1);
+
+#endif

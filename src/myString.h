@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+#ifndef MYSTRING_H
+#define MYSTRING_H
+
 class MyString{
 private:
 	int length;
@@ -26,3 +29,5 @@ public:
 };
 ostream& operator<<(ostream& c, MyString& m) ;
 ostream& operator<<(ostream& c, MyString* m) ;
+
+#endif

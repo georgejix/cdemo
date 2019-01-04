@@ -5,6 +5,8 @@
 #include "fuShu.h"
 #include "myString.h"
 #include "animal.h"
+#include "testExtends.h"
+#include <fstream>
 
 using namespace std;
 void testNvGui1();
@@ -12,14 +14,28 @@ void testNvGui2();
 void testFuShu();
 void testMyString();
 void testAnimal();
+void testExtend();
+void testFstream();
 
 int main(){
 	//testNvGui1();
 	//testNvGui2();
 	//testFuShu();
 	//testMyString();
-	testAnimal();
+	//testAnimal();
+	//testExtend();
+	testFstream();
 	return 0;
+}
+
+void testFstream(){
+	ofstream fout("E://work_jx/wenjian/20190102/1.txt");
+	fout << "testfstream" << endl;
+}
+
+void testExtend(){
+	AnimalOfLiangqi lq;
+	lq.getAge();
 }
 
 void testAnimal(){

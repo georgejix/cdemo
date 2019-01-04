@@ -1,5 +1,8 @@
 #include <string>
 using namespace std;
+#ifndef NVGUI2_H
+#define NVGUI2_H
+
 class NvGui2{
 private:
 	std::string name;
@@ -9,3 +12,5 @@ public:
 	void show();
 	void setName(string name);
 };
+
+#endif

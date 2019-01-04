@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+#ifndef ANIMAL_H
+#define ANIMAL_H
+
 class Animal{
 private:
 	string name;
@@ -44,3 +47,5 @@ class People{
 public:
 static void like(Animal& animal);
 };
+
+#endif
