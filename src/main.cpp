@@ -6,7 +6,10 @@
 #include "myString.h"
 #include "animal.h"
 #include "testExtends.h"
+#include "innerclass.h"
+#include "templateclass.h"
 #include <fstream>
+#include <vector>
 
 using namespace std;
 void testNvGui1();
@@ -16,6 +19,9 @@ void testMyString();
 void testAnimal();
 void testExtend();
 void testFstream();
+void testInnerclass();
+void testTemplateclass();
+void testVector();
 
 int main(){
 	//testNvGui1();
@@ -24,8 +30,58 @@ int main(){
 	//testMyString();
 	//testAnimal();
 	//testExtend();
-	testFstream();
+	//testFstream();
+	//testInnerclass();
+	//testTemplateclass();
+	testVector();
 	return 0;
+}
+
+void testVector(){
+	vector<string> myvector;
+	myvector.push_back("ab");
+	myvector.push_back("bb");
+	myvector.push_back("cb");
+
+	for(size_t i = 0; i < myvector.size(); i++){
+		cout<<(myvector[i])<<'\t';
+	}
+	cout<<endl;
+
+	vector<string>::iterator myiterator;
+	for(myiterator = myvector.begin(); myiterator != myvector.end(); myiterator++){
+		cout<<*myiterator<<'\t';
+	}
+	cout<<endl;
+	/*vector<string> *myvector = new vector<string>();
+	myvector->push_back("ab");
+	myvector->push_back("bb");
+	myvector->push_back("cb");
+
+	for(int i = 0; i < myvector->size(); i++){
+		cout<<*(myvector[i])<<'\t';
+	}
+	cout<<endl;
+
+	vector<string>::iterator myiterator;
+	for(myiterator = myvector->begin(); myiterator != myvector->end(); myiterator++){
+		cout<<*myiterator<<'\t';
+	}
+	cout<<endl;*/
+}
+
+void testTemplateclass(){
+	double d[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+	display(d, 5);
+	int i[] = {1, 2, 3, 4, 5};
+	display(i, 5);
+	templateclass<string> *t = new templateclass<string>("ssssss", 25);
+	t->show();
+}
+
+void testInnerclass(){
+	innerclass::inner *inner = new innerclass::inner();
+	inner->show();
 }
 
 void testFstream(){
