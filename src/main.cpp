@@ -77,11 +77,13 @@ void testTemplateclass(){
 	display(i, 5);
 	templateclass<string> *t = new templateclass<string>("ssssss", 25);
 	t->show();
+	delete t;
 }
 
 void testInnerclass(){
 	innerclass::inner *inner = new innerclass::inner();
 	inner->show();
+	delete inner;
 }
 
 void testFstream(){
@@ -177,6 +179,9 @@ void testFuShu(){
 	++(*f2);
 	f2->show();
 	+(*f1);
+
+	delete f1;
+	delete f2;
 }
 
 void testNvGui2(){
