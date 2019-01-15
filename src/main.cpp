@@ -10,7 +10,7 @@
 #include "templateclass.h"
 #include <fstream>
 #include <vector>
-#include "../include/TestLib.h"
+#include "TestLib.h"
 
 using namespace std;
 void testNvGui1();
