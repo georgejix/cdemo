@@ -1,2 +1,8 @@
 eclipse 生成及使用C/C++静态库:
 https://blog.csdn.net/u012707739/article/details/77899880
+
+Linux下的静态库以.a结尾(Winodws下为.lib)
+Linux下的动态库以.so 或 .so.y结尾，其中y代表版本号(Windows下为.dll)
+
+Makefile简易教程:
+https://www.cnblogs.com/owlman/p/5514724.html
