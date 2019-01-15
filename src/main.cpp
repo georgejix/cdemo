@@ -10,6 +10,7 @@
 #include "templateclass.h"
 #include <fstream>
 #include <vector>
+#include "../include/TestLib.h"
 
 using namespace std;
 void testNvGui1();
@@ -22,6 +23,7 @@ void testFstream();
 void testInnerclass();
 void testTemplateclass();
 void testVector();
+void testStaticLib();
 
 int main(){
 	//testNvGui1();
@@ -32,11 +34,18 @@ int main(){
 	//testExtend();
 	//testFstream();
 	//testInnerclass();
-	//testTemplateclass();
+	testTemplateclass();
 	testVector();
+	testStaticLib();
 	return 0;
 }
 
+void testStaticLib(){
+	TestLib *t = new TestLib();
+	cout<<t->add(3,5)<<endl;
+}
+
+template <class T> class templateclass;
 void testVector(){
 	vector<string> myvector;
 	myvector.push_back("ab");
