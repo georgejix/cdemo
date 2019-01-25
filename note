@@ -6,3 +6,7 @@ Linux下的动态库以.so 或 .so.y结尾，其中y代表版本号(Windows下�
 
 Makefile简易教程:
 https://www.cnblogs.com/owlman/p/5514724.html
+
+添加动态库：
+工程右键-properties-c.c++ build-settings-tool settings-cygwin c++ linker-shared library settings-shared object name 
+填入 avcodec-avdevice-avfilter-avformat-avutil-swresample-swscale
