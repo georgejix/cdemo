@@ -11,6 +11,7 @@
 #include <fstream>
 #include <vector>
 #include "TestLib.h"
+#include "sortList.h"
 
 using namespace std;
 void testNvGui1();
@@ -24,21 +25,34 @@ void testInnerclass();
 void testTemplateclass();
 void testVector();
 void testStaticLib();
+void sortList();
 
 int main(){
-	cout<<~1<<endl;
+	//cout<<~1<<endl;
 	//testNvGui1();
 	//testNvGui2();
 	//testFuShu();
 	//testMyString();
 	//testAnimal();
-	testExtend();
+	//testExtend();
 	//testFstream();
 	//testInnerclass();
 	//testTemplateclass();
 	//testVector();
 	//testStaticLib();
+	sortList();
 	return 0;
+}
+
+void sortList(){
+	int array[8] = {3,4,12,8,5,11,9,1};
+	//insertSort(array, 8);
+	//binarySort(array, 8);
+	//shellSort(array, 8);
+	//bubbleSort(array, 8);
+	//quickSort(array, 0, 7);
+	//selectSort(array, 8);
+	heapSort(array, 8);
 }
 
 void testStaticLib(){

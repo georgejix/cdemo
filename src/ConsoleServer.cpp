@@ -12,7 +12,7 @@ std::list<SOCKET> client_list;
   
 void thread_client(void * );
   
-int main(int argc, char * argv[])  
+/*int main(int argc, char * argv[])
 {  
   
     unsigned short sPort = argc>1 ? atoi(argv[1]) : 5678;
@@ -62,7 +62,7 @@ int main(int argc, char * argv[])
   
     }  
     return 0;  
-}  
+}  */
   
 void thread_client(void * args)
 {  
