@@ -31,6 +31,7 @@ bool FuShu::operator==(FuShu &f1){
 };
 
 FuShu& FuShu::operator+(int i){
+	cout<<"+ int"<<endl;
 	this->real += i;
 	return *this;
 };
@@ -46,5 +47,9 @@ FuShu& FuShu::operator++(int k){
 	this->image +=1;
 	return *this;
 };
-void operator+(FuShu &f1){
-};
+/*void operator+(FuShu &f1){
+	cout<<"+ FuShu"<<endl;
+};*/
+void FuShu::operator +(){
+	cout<<"+ FuShu"<<endl;
+}

@@ -18,8 +18,9 @@ class FuShu{
 		FuShu& operator+(int i);
 		FuShu& operator++();
 		FuShu& operator++(int k);
+		void operator+();//和独立函数void operator+(FuShu &f1);等价
 };
 FuShu operator+(FuShu &f1, FuShu &f2);
-void operator+(FuShu &f1);
+//void operator+(FuShu &f1);
 
 #endif

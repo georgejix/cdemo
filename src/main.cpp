@@ -26,17 +26,18 @@ void testVector();
 void testStaticLib();
 
 int main(){
+	cout<<~1<<endl;
 	//testNvGui1();
 	//testNvGui2();
 	//testFuShu();
 	//testMyString();
 	//testAnimal();
-	//testExtend();
+	testExtend();
 	//testFstream();
 	//testInnerclass();
-	testTemplateclass();
-	testVector();
-	testStaticLib();
+	//testTemplateclass();
+	//testVector();
+	//testStaticLib();
 	return 0;
 }
 
