@@ -10,3 +10,10 @@ https://www.cnblogs.com/owlman/p/5514724.html
 添加动态库：
 工程右键-properties-c.c++ build-settings-tool settings-cygwin c++ linker-shared library settings-shared object name 
 填入 avcodec-avdevice-avfilter-avformat-avutil-swresample-swscale
+
+数组指针（也称行指针）
+int (*p)[4]; //该语句是定义一个数组指针，指向含4个元素的一维数组。
+
+指针数组
+定义 int *p[n];
+[]优先级高，先与p结合成为一个数组，再由int*说明这是一个整型指针数组，它有n个指针类型的数组元素。

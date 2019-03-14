@@ -26,6 +26,14 @@ void printList(T a[], int n){
 }
 
 template <typename T>
+void printPartList(T a[], int left, int right){
+	for(int i = left; i <= right; i++){
+		cout << a[i] << "  ";
+	}
+	cout << endl;
+}
+
+template <typename T>
 void printList(T a[], int n, int index){
 	for(int i = 0; i < n; i++){
 		if(i == index){
@@ -232,8 +240,10 @@ void adjustHeap(T a[], int i, int n){
 	while (j < n)
 	{
 		if (j + 1 < n && a[j] < a[j + 1]) j++; //如果右子树大于它的左子树，则j改为指向右子树
-		if (value < a[j]) a[(j - 1) / 2] = a[j]; //如果孩子节点较大，则将孩子节点与父节点交换（因为是递归调整，所以不用修改孩子节点的值）
-		else break;
+		if (value < a[j]) {
+			a[(j - 1) / 2] = a[j]; //如果孩子节点较大，则将孩子节点与父节点交换（因为是递归调整，所以不用修改孩子节点的值）
+			a[j] = value;
+		}else break;
 		j = j * 2 + 1; //递归遍历孩子节点
 	}
 	//j < n ? (a[j] = value) : (a[(j - 1) / 2] = value); //递归出口，被break掉的情况和j越界的情况
@@ -263,5 +273,107 @@ void heapSort(T a[], int n)
 		adjustHeap(a, 0, i); //调整堆
 		printList(a, n);
 	}
+}
+
+
+/*
+归并排序
+a：待排序元素集合
+left：集合中第一个元素下标
+right：集合中最后一个元素下标
+步骤：
+（1）将排序集合递归划分成两个集合，直到划分集合的长度为1
+（2）以有序的方式合并两个有序集合
+（3）重复（2）直到所有集合都合并完
+*/
+template <typename T>
+void mergeSort(T a[], int left, int right){
+	if (left < right)
+		{
+			//分
+			int mid = (left + right) / 2; //二分法将集合划分成两个部分
+			mergeSort(a, left, mid); //递归划分左边集合
+			mergeSort(a, mid + 1, right); //递归划分右边集合
+
+			//合
+			T *tmp = new T[right - left + 1]; //建立一个临时数组，存放合并的有序序列
+			int i = left, j = mid + 1, k = 0; //i为左边集合下标，j为右边集合下标，k为合并集合下标
+			while (i <= mid && j <= right)
+			{
+				if (a[i] < a[j]) tmp[k++] = a[i++]; //左边集合值更小
+				else tmp[k++] = a[j++]; //右边集合值更小
+			}
+			while (i <= mid) tmp[k++] = a[i++]; //如果左边集合未遍历完
+			while (j <= right) tmp[k++] = a[j++]; //如果右边集合未遍历完
+			while (--k >= 0) a[left + k] = tmp[k]; //将临时数组拷贝回原数组
+			delete[] tmp; //释放空间
+		}
+	printPartList(a, left, right);
+}
+
+/*
+基数节点
+val：元素的值，采用字符串表示
+next：该元素的下一个节点地址
+*/
+#include <string>
+typedef struct _RadixNode
+{
+	string val;
+	struct _RadixNode *next;
+}RadixNode;
+
+/*
+基数排序
+p：待排序元素集合，用单链表表示
+r：元素的基数（对于二进制r为2，对于10进制r为10）
+d：元素的位数
+步骤：
+（1）将集合分成r个组，r的值为集合每一位的所有可能取值的个数
+（2）从集合的第d位开始，重复（3）（4）直至d的值为0，d的值为集合中元素的最大位数
+（3）将集合中所有元素分配到相应的组
+（4）从所有组中收集元素
+*/
+//*&p表示指针*p的引用
+void radixSort(RadixNode *&p, int r, int d)
+{
+	RadixNode **head = new RadixNode*[r]; //存储基数的每一个字符的头节点
+	RadixNode **tail = new RadixNode*[r]; //存储基数的每一个字符的尾节点
+	while (--d >= 0) //对集合中所有数字的每一位进行分配和收集
+	{
+		//分配
+		for (int i = 0; i < r; i++) //初始化头结点和尾节点
+			head[i] = tail[i] = NULL;
+		while (p != NULL) //分配集合中的每一个元素
+		{
+			int i = p->val[d] - '0'; //获取元素第d位对应的字符下标
+			if (head[i] == NULL) //分配到对应的字符组，组中没有元素的情况
+				head[i] = tail[i] = p;
+			else //分配到对应的字符组，组中已经有元素的情况
+				tail[i] = tail[i]->next = p;
+			p = p->next;
+		}
+		//收集
+		p = NULL;
+		auto q = p;
+		for (int i = 0; i < r; i++) //收集每一个组的所有元素
+		{
+			if (head[i] != NULL) //组不为空收集
+			{
+				if (p == NULL) //还未收集到元素的情况
+				{
+					p = head[i];
+					q = tail[i];
+				}
+				else //已经收集到元素的情况
+				{
+					q->next = head[i];
+					q = tail[i];
+				}
+			}
+		}
+		if(q) q->next = NULL; //添加链表结束标志
+	}
+	delete[] head, tail; //释放空间
 }
 #endif /* SRC_SORTLIST_H_ */

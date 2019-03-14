@@ -52,7 +52,8 @@ void sortList(){
 	//bubbleSort(array, 8);
 	//quickSort(array, 0, 7);
 	//selectSort(array, 8);
-	heapSort(array, 8);
+	//heapSort(array, 8);
+	mergeSort(array, 0, 7);
 }
 
 void testStaticLib(){
