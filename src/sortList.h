@@ -14,6 +14,7 @@
 #define SRC_SORTLIST_H_
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 
@@ -316,7 +317,6 @@ void mergeSort(T a[], int left, int right){
 val：元素的值，采用字符串表示
 next：该元素的下一个节点地址
 */
-#include <string>
 typedef struct _RadixNode
 {
 	string val;
@@ -334,46 +334,6 @@ d：元素的位数
 （3）将集合中所有元素分配到相应的组
 （4）从所有组中收集元素
 */
-//*&p表示指针*p的引用
-void radixSort(RadixNode *&p, int r, int d)
-{
-	RadixNode **head = new RadixNode*[r]; //存储基数的每一个字符的头节点
-	RadixNode **tail = new RadixNode*[r]; //存储基数的每一个字符的尾节点
-	while (--d >= 0) //对集合中所有数字的每一位进行分配和收集
-	{
-		//分配
-		for (int i = 0; i < r; i++) //初始化头结点和尾节点
-			head[i] = tail[i] = NULL;
-		while (p != NULL) //分配集合中的每一个元素
-		{
-			int i = p->val[d] - '0'; //获取元素第d位对应的字符下标
-			if (head[i] == NULL) //分配到对应的字符组，组中没有元素的情况
-				head[i] = tail[i] = p;
-			else //分配到对应的字符组，组中已经有元素的情况
-				tail[i] = tail[i]->next = p;
-			p = p->next;
-		}
-		//收集
-		p = NULL;
-		auto q = p;
-		for (int i = 0; i < r; i++) //收集每一个组的所有元素
-		{
-			if (head[i] != NULL) //组不为空收集
-			{
-				if (p == NULL) //还未收集到元素的情况
-				{
-					p = head[i];
-					q = tail[i];
-				}
-				else //已经收集到元素的情况
-				{
-					q->next = head[i];
-					q = tail[i];
-				}
-			}
-		}
-		if(q) q->next = NULL; //添加链表结束标志
-	}
-	delete[] head, tail; //释放空间
-}
+//  *&p表示指针*p的引用
+void radixSort(RadixNode *&p, int r, int d);
 #endif /* SRC_SORTLIST_H_ */

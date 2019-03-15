@@ -12,6 +12,7 @@
 #include <vector>
 #include "TestLib.h"
 #include "sortList.h"
+#include "Thread.h"
 
 using namespace std;
 void testNvGui1();
@@ -26,6 +27,7 @@ void testTemplateclass();
 void testVector();
 void testStaticLib();
 void sortList();
+void testThread();
 
 int main(){
 	//cout<<~1<<endl;
@@ -40,8 +42,13 @@ int main(){
 	//testTemplateclass();
 	//testVector();
 	//testStaticLib();
-	sortList();
+	//sortList();
+	testThread();
 	return 0;
+}
+
+void testThread(){
+	testThread1();
 }
 
 void sortList(){
