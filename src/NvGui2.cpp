@@ -1,6 +1,7 @@
+#include "NvGui2.h"
+
 #include <iostream>
 #include <string>
-#include "nvGui2.h"
 using namespace std;
 
 NvGui2 *n = NULL;

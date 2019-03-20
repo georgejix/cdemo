@@ -110,7 +110,7 @@ int test(){
 
 	//int (*p)[5] = (int (*)[5])malloc(25 * sizeof(int));
 	int (*p)[5] = (int (*)[5])calloc(25 , sizeof(int));
-	int *p_ = p;
+	int *p_ = (int *)p;
 	p[0][0] = 24;
 	p[0][1] = 25;
 	(*(p + 1))[2] = 26;
@@ -120,7 +120,7 @@ int test(){
 	*(*p+3) = 5;
 	//memset(p, 10, 4);
 
-	p = p_;
+	p = (int *)p_;
 	printf("%p\n", &p[1][1]);
 	printf("%p\n", (*(p + 1)) + 1);
 	printf("%d\n", *(*(p + 1) + 2));

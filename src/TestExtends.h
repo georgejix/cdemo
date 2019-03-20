@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "animal.h"
+
+#include "Animal.h"
 
 #ifndef TESTEXTENDS_H
 #define TESTEXTENDS_H

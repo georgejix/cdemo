@@ -1,6 +1,7 @@
+#include "Animal.h"
+
 #include <iostream>
 #include <string>
-#include "animal.h"
 using namespace std;
 
 Animal::Animal(){

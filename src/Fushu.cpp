@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "FuShu.h"
+#include "Fushu.h"
 using namespace std;
 
 FuShu::FuShu(int real, int image){

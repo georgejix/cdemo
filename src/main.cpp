@@ -1,17 +1,18 @@
 #include <iostream>
 #include <string>
-#include "nvGui1.h"
-#include "nvGui2.h"
-#include "fuShu.h"
-#include "myString.h"
-#include "animal.h"
-#include "testExtends.h"
-#include "innerclass.h"
-#include "templateclass.h"
 #include <fstream>
 #include <vector>
+
+#include "Fushu.h"
+#include "Animal.h"
+#include "Innerclass.h"
+#include "MyString.h"
+#include "NvGui1.h"
+#include "NvGui2.h"
+#include "SortList.h"
+#include "Templateclass.h"
+#include "TestExtends.h"
 #include "TestLib.h"
-#include "sortList.h"
 #include "Thread.h"
 
 using namespace std;

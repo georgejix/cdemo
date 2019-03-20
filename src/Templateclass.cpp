@@ -5,8 +5,9 @@
  *      Author: Administrator
  */
 
+#include "Templateclass.h"
+
 #include <iostream>
-#include "templateclass.h"
 using namespace std;
 
 

@@ -1,5 +1,6 @@
+#include "MyString.h"
+
 #include <iostream>
-#include "myString.h"
 using namespace std;
 
 int MyString::getLength(const char *p){

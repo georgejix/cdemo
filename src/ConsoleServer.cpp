@@ -1,3 +1,4 @@
+/*
 // ConsoleServer.cpp : 定义控制台应用程序的入口点。  
 //  
   
@@ -12,7 +13,7 @@ std::list<SOCKET> client_list;
   
 void thread_client(void * );
   
-/*int main(int argc, char * argv[])
+int main(int argc, char * argv[])
 {  
   
     unsigned short sPort = argc>1 ? atoi(argv[1]) : 5678;
@@ -62,7 +63,7 @@ void thread_client(void * );
   
     }  
     return 0;  
-}  */
+}
   
 void thread_client(void * args)
 {  
@@ -87,11 +88,12 @@ void thread_client(void * args)
         fflush(stdout);
   
         send(client, szMsg, strlen(szMsg), 0);
-       /* for (std::list<SOCKET>::iterator it = client_list.begin();
+        for (std::list<SOCKET>::iterator it = client_list.begin();
                 it != client_list.end();  
                 it ++)  
         {  
             send(*it, szEcho, strlen(szEcho), 0);
-        }   */
+        }
     }  
 }  
+*/

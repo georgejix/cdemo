@@ -1,6 +1,7 @@
+#include "NvGui1.h"
+
 #include <iostream>
 #include <string>
-#include "nvGui1.h"
 
 using namespace std;
 
