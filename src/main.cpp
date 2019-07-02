@@ -14,6 +14,7 @@
 #include "TestExtends.h"
 #include "TestLib.h"
 #include "Thread.h"
+#include "TestPrint.h"
 
 using namespace std;
 void testNvGui1();
@@ -29,6 +30,7 @@ void testVector();
 void testStaticLib();
 void sortList();
 void testThread();
+void testPrint();
 
 int main(){
 	//cout<<~1<<endl;
@@ -44,8 +46,14 @@ int main(){
 	//testVector();
 	//testStaticLib();
 	//sortList();
-	testThread();
+	//testThread();
+	testPrint();
 	return 0;
+}
+
+void testPrint(){
+	TestPrint *testPrint = new TestPrint();
+	testPrint->printByteArray();
 }
 
 void testThread(){
