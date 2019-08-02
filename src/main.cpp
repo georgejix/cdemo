@@ -15,6 +15,7 @@
 #include "TestLib.h"
 #include "Thread.h"
 #include "TestPrint.h"
+#include "TestFork.h"
 
 using namespace std;
 void testNvGui1();
@@ -31,6 +32,7 @@ void testStaticLib();
 void sortList();
 void testThread();
 void testPrint();
+void testFork();
 
 int main(){
 	//cout<<~1<<endl;
@@ -47,8 +49,14 @@ int main(){
 	//testStaticLib();
 	//sortList();
 	//testThread();
-	testPrint();
+	//testPrint();
+	testFork();
 	return 0;
+}
+
+void testFork(){
+	TestFork *testFork = new TestFork();
+	testFork->test1();
 }
 
 void testPrint(){
@@ -69,7 +77,7 @@ void sortList(){
 	//quickSort(array, 0, 7);
 	//selectSort(array, 8);
 	//heapSort(array, 8);
-	mergeSort(array, 0, 7);
+	mergeSort<int>(array, 0, 7);
 }
 
 void testStaticLib(){
